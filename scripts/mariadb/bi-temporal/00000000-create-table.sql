@@ -7,6 +7,6 @@ CREATE OR REPLACE TABLE person (
   -- transaction_to   timestamp(6) GENERATED ALWAYS AS ROW END,
   PERIOD FOR valid_period(valid_from, valid_to),
   -- PERIOD FOR SYSTEM_TIME(transaction_from, transaction_to),
-  UNIQUE (name, valid_period WITHOUT OVERLAPS)
+  PRIMARY KEY (name, valid_period WITHOUT OVERLAPS)
 )
 WITH SYSTEM VERSIONING;

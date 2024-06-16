@@ -4,5 +4,5 @@ CREATE OR REPLACE TABLE person (
   valid_from date,
   valid_to   date,
   PERIOD FOR valid_period(valid_from, valid_to),
-  UNIQUE (name, valid_period WITHOUT OVERLAPS)
+  PRIMARY KEY (name, valid_period WITHOUT OVERLAPS)
 );
